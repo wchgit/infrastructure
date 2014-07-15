@@ -49,20 +49,3 @@ def test():
 
 if __name__ == '__main__':
     test()
-'''
-log = logging.getLogger()
-dic = {}
-colors = {'debug':4,
-          'info':2,
-          'warning':3,
-          'error':1}
-form = '%(color)s[%(time)s]'\
-    '%(end_color)s %(message)s'
-curses.setupterm()
-dic['color'] = curses.tparm(curses.tigetstr('setaf'),1)
-dic['end_color'] = curses.tigetstr('sgr0')
-dic['time'] = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime())
-dic['message'] = 'hello world'
-formatted = form % dic
-print formatted
-'''
