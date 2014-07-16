@@ -31,6 +31,9 @@ class PrettyFormatter(logging.Formatter):
 
 
 def get_logger(name='default.log', level=logging.DEBUG):
+    """
+    get a Logger object with colors
+    """
     logger = logging.getLogger(name)
     logger.setLevel(level)
     hdlr = logging.StreamHandler()
@@ -40,12 +43,18 @@ def get_logger(name='default.log', level=logging.DEBUG):
     logger.addHandler(hdlr)
     return logger
 
-def test():
+
+def test_get_logger():
     logger = get_logger()
     logger.debug('message')
     logger.info('message')
     logger.warning('message')
     logger.error('message')
+
+
+def test():
+    test_get_logger()
+
 
 if __name__ == '__main__':
     test()
